@@ -27,11 +27,11 @@ chmod a+x pve-syncoidVMs.sh
 
 ## Roadmap
 I might need to add a few things <br>
--[] make anything after the 2nd argument become a keyboard to exclude certain datasets, <br>
+[] make anything after the 2nd argument become a keyboard to exclude certain datasets, <br>
   for example all datasets except for vm id 102 and 203.
   ```bash
   pve-syncoidVMs.sh tank200/_VMs rpool/_Backup vm-102 vm-203
   ```
--[x] set origin and detination via arguments
+[x] set origin and detination via arguments
 
 
