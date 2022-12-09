@@ -6,9 +6,10 @@ Sync over zfs virtual disks of a proxmox vm to a backup dataset. <br>
 ```bash
 wget https://raw.githubusercontent.com/Mikesco3/pve-syncoidVMs/main/pve-syncoidVMs.sh
 ```
-3. Make executable.
+3. Make executable and link to the system path.
 ```bash
-chmod a+x pve-syncoidVMs.sh
+chmod a+x pve-syncoidVMs.sh  && \
+ln -s pve-syncoidVMs.sh /usr/sbin/pve-syncoidVMs.sh
 ```
 4. run the command with arguments, <br>
   for ex:
@@ -22,8 +23,13 @@ chmod a+x pve-syncoidVMs.sh
   # origin_Zfs_path=tank200/_VMs
   # destin_Zfs_path=rpool/_Backup
   ```
-
-5. Run or schedule on crontab -e
+### Schedule to happen automatically
+1. Open add to crontab:  ` crontab -e` and then add the following line <br>
+for example to run at 5 minute every 2nd hour <br>
+sync every virtual disk from **`tank200/VMs`** to **`rpool/_Backup`**:
+```apache-conf
+5 */2 * * * /usr/sbin/pve-syncoidVMs.sh tank200/_VMs rpool/_Backup
+```
 
 ## Roadmap
 I might need to add a few things <br>
@@ -32,6 +38,7 @@ I might need to add a few things <br>
   ```bash
   pve-syncoidVMs.sh tank200/_VMs rpool/_Backup vm-102 vm-203
   ```
+## v0.1  
 - [x] set origin and detination via arguments
 
 
