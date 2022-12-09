@@ -10,14 +10,28 @@ wget https://raw.githubusercontent.com/Mikesco3/pve-syncoidVMs/main/pve-syncoidV
 ```bash
 chmod a+x pve-syncoidVMs.sh
 ```
-4. Change the variables for the origin and destination (lines 11 and 12)
+4. run the command with arguments, <br>
+  for ex:
+  ```bash
+  pve-syncoidVMs.sh tank200/_VMs rpool/_Backup
+  ```
+  or hardcode the origin and destination  <br>
+  by uncommenting and editing the corresponding variables <br>
+  around line 19 of the [pve-syncoidVMs.sh](https://github.com/Mikesco3/pve-syncoidVMs/blob/main/pve-syncoidVMs.sh) script
+  ```apache
+  # origin_Zfs_path=tank200/_VMs
+  # destin_Zfs_path=rpool/_Backup
+  ```
+
 5. Run or schedule on crontab -e
 
 ## Roadmap
-I might need to add a few things
-- set origin and detination via arguments
-- set an exclude string to exclude certain datasets, based on a keyword <br>
-  for example all datasets except for vm id 102.
-
+I might need to add a few things <br>
+-[] make anything after the 2nd argument become a keyboard to exclude certain datasets, <br>
+  for example all datasets except for vm id 102 and 203.
+  ```bash
+  pve-syncoidVMs.sh tank200/_VMs rpool/_Backup vm-102 vm-203
+  ```
+-[x] set origin and detination via arguments
 
 
