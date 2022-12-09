@@ -10,7 +10,7 @@ Sync over zfs virtual disks of a proxmox vm to a backup dataset. <br>
 ## Roadmap
 I might need to add a few things
 - set origin and detination via arguments
-- set an exclude string to exclude certain datasets, based on a keyword
+- set an exclude string to exclude certain datasets, based on a keyword <br>
   for example all datasets except for vm id 102.
 
 
