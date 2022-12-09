@@ -25,7 +25,7 @@ ln -s pve-syncoidVMs.sh /usr/sbin/pve-syncoidVMs.sh
   ```
 ### Schedule to happen automatically
 1. Open add to crontab:  ` crontab -e` and then add the following line <br>
-for example to run at 5 minute every 2nd hour <br>
+for example to run at 5 minute past every 2nd hour, <br>
 sync every virtual disk from **`tank200/VMs`** to **`rpool/_Backup`**:
 ```apache-conf
 5 */2 * * * /usr/sbin/pve-syncoidVMs.sh tank200/_VMs rpool/_Backup
